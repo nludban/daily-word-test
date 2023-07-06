@@ -25,9 +25,11 @@ class GameController:
         return game_id
 
     def get_game(self, game_id: int) -> gamestate.GameState:
+        # (Added for testing.)
         return self._games[game_id]
 
     def guess(self, game_id: int, word: str) -> gamestate.GameState:
+        # TODO: subclass exceptions for readable error handling
         if game_id not in self._games:
             raise KeyError(f'Unknown {game_id=}')
         game = self._games[game_id]

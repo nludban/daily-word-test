@@ -39,7 +39,7 @@ Found 6 errors in 2 files (checked 6 source files)
 
 ```
 % uvicorn gameserver:app --reload
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 
 % curl -X POST http://127.0.0.1:8000/new_game

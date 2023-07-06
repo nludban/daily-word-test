@@ -5,6 +5,7 @@ import gamestate
 import pytest
 
 def map_score(score):
+    # Acronym-ize a list of color names for assertions
     return ''.join([ ls.color[0] for ls in score ])
 
 #---------------------------------------------------------------------#
@@ -44,7 +45,7 @@ class TestGameState:
         assert state.status == gamestate.GameStatus.INITIAL
 
     def test_gamestate_winner(self, state):
-        # First time playing.
+        # And first time playing, too.
         status = state.guess('LEANS')
         assert status == gamestate.GameStatus.NOPE
         assert map_score(state.score) == 'GGGBG'

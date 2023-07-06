@@ -59,6 +59,8 @@ class GameState:
         self.guesses.append(word)
         return self.status
 
+    # TODO: incorrectly_guessed_letters -> list[str]
+
     @property
     def status(self) -> GameStatus:
         if not self.guesses:
