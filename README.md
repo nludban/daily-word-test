@@ -17,3 +17,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 % pip install -r requirements.txt
 ```
 
+YMMV:
+```
+% sha256 /usr/share/dict/words
+SHA256 (/usr/share/dict/words) = a80b7cac20dff2fd92e59bb58d2d581efa9b965756a8c8f03f754d3d98e92723
+```
+
+## Testing
+
+```
+% pytest --color=no -v --pdb
+...
+
+```
+
