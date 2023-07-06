@@ -26,8 +26,13 @@ SHA256 (/usr/share/dict/words) = a80b7cac20dff2fd92e59bb58d2d581efa9b965756a8c8f
 ## Testing
 
 ```
+% mypy --check-untyped-defs *.py
+...
+Found 6 errors in 2 files (checked 6 source files)
+
 % pytest --color=no -v --pdb
 ...
+============= 16 passed in 0.63s ===================
 
 ```
 

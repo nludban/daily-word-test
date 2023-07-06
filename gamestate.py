@@ -42,12 +42,17 @@ class GameStatus(enum.Enum):
     WINNER = 'correct'
     LOSER = 'lost'
 
+    @property
+    def is_terminal(self):
+        return self.value in ( self.WINNER.value,
+                               self.LOSER.value )
+
 
 @dataclasses.dataclass
 class GameState:
 
     word: str
-    game_id: int = None
+    game_id: int = -1
     guesses: list[str] = dataclasses.field(default_factory=list)
 
     def guess(self, word: str) -> GameStatus:

@@ -12,22 +12,20 @@ class WordList:
                  words_path='/usr/share/dict/words'):
         words = [ word.strip()
                   for word in open(words_path).readlines() ]
-        words = set(( word.upper() for word in words
-                      if filter(word) ))
-        self._words = sorted(words)
+        words_set = set(( word.upper() for word in words
+                          if filter(word) ))
+        self._words = sorted(words_set)
         return
 
     def __len__(self):
         return len(self._words)
 
-    def __contains__(self, word):
+    def __contains__(self, word: str) -> bool:
         return word in self._words
 
-    def random_word(self, seed=None):
-        if seed is None:
-            # Daily word game.
-            seed = time.strftime('%Y%m%d')
-        random.seed(seed)
+    def random_word(self, seed: int=0) -> str:
+        s = seed or time.strftime('%Y%m%d')
+        random.seed(s)
         return random.choice(self._words)
 
 #--#
