@@ -36,3 +36,24 @@ Found 6 errors in 2 files (checked 6 source files)
 
 ```
 
+
+```
+% uvicorn gameserver:app --reload
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+
+% curl -X POST http://127.0.0.1:8000/new_game
+{"game_id":2}
+
+% curl -X POST http://127.0.0.1:8000/guess \
+	-H 'Content-Type: application/json' \
+	-d '{"game_id": 2, "guess": "WINDY"}'
+{"guess_result":"correct",
+ "letter1":"correct",
+ "letter2":"correct",
+ "letter3":"correct",
+ "letter4":"correct",
+ "letter5":"correct",
+ "incorrectly_guessed_letters":["notyet"]
+}
+```

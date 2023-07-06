@@ -11,6 +11,7 @@ class GameController:
 
     def __init__(self):
         self._wordlist = wordlist.WordList()
+        # TODO: Replace dict with persistent layer (mongo?)
         self._games: dict[int, gamestate.GameState] = { }
         return
 
@@ -18,7 +19,7 @@ class GameController:
         game_id = len(self._games) + 1
         game = gamestate.GameState(
             game_id=game_id,
-            word=self._wordlist.random_word(seed),
+            word=self._wordlist.random_word(seed or 0),
         )
         self._games[game_id] = game
         return game_id
