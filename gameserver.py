@@ -36,8 +36,12 @@ async def new_game() -> NewGameResponse:
 
 @app.post('/guess')
 async def guess(request: GuessRequest) -> GuessResponse:
-    # TODO: catch exceptions and map to error responses
-    state = gamec.guess(request.game_id, request.guess)
+    try:
+        state = gamec.guess(request.game_id, request.guess)
+    except KeyError as exc:
+        raise fastapi.HTTPException(status_code=404, detail=str(exc))
+    except ValueError as exc:
+        raise fastapi.HTTPException(status_code=400, detail=str(exc))
     score = state.score
     response = GuessResponse(
         guess_result = state.status,

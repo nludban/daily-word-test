@@ -15,6 +15,9 @@ class GameController:
         self._games: dict[int, gamestate.GameState] = { }
         return
 
+    def reset_games(self):
+        self._games: dict[int, gamestate.GameState] = { }
+
     def new_game(self, seed: typing.Optional[int]=None) -> int:
         game_id = len(self._games) + 1
         game = gamestate.GameState(
