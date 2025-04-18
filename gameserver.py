@@ -28,7 +28,7 @@ class GuessResponse(pydantic.BaseModel):
 
 app = fastapi.FastAPI()
 gamec = gamecontroller.GameController()
-seed = 12365	# WINDY.
+seed = 3093	# WINDY.
 
 @app.post('/new_game')
 async def new_game() -> NewGameResponse:

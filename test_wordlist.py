@@ -17,7 +17,7 @@ class TestWordList:
         # egrep '^.....$' /usr/share/dict/words
         # | tr '[:lower:]' '[:upper:]'
         # | sort -u | wc -l
-        assert len(wordlist) == 9979
+        assert len(wordlist) == 9981
 
     def test_contains_valid_word(self, wordlist):
         assert 'CURLY' in wordlist
@@ -31,7 +31,7 @@ class TestWordList:
         assert wordlist.random_word(1) == 'CURLY'
         assert wordlist.random_word(2) == 'BAUCH'
         assert wordlist.random_word(3) == 'HEMOL'
-        assert wordlist.random_word(12365) == 'WINDY'
+        assert wordlist.random_word(3093) == 'WINDY'
 
     def test_random_word_today(self, wordlist):
         with mock.patch('wordlist.random') as random:

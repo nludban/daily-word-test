@@ -28,4 +28,16 @@ class WordList:
         random.seed(s)
         return random.choice(self._words)
 
+
+if __name__ == '__main__':
+    import sys
+    target = sys.argv[1].upper()
+    wl = WordList()
+    for seed in range(100_000):
+        if wl.random_word(seed) == target:
+            print(seed)
+            break
+    else:
+        print('No seed found.')
+
 #--#
