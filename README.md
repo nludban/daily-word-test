@@ -6,7 +6,7 @@ Take home coding test.
 
 ```
 % python3 -m venv ~/.venv-daily-word-test
-% source ~/.venv-daily-word-test/bin/activate.csh 
+% source ~/.venv-daily-word-test/bin/activate
 
 (.venv-daily-word-test) % python
 Python 3.9.13 (main, Sep 18 2022, 05:35:03) 

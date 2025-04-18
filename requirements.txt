@@ -13,9 +13,16 @@ pluggy==1.5.0
 pydantic==2.11.3
 pydantic_core==2.33.1
 pytest==8.3.5
+setuptools==78.1.0
 sniffio==1.3.1
 starlette==0.46.2
+types-colorama==0.4.15.20240311
+types-docutils==0.21.0.20241128
 types-mock==5.2.0.20250306
+types-pexpect==4.9.0.20241208
+types-Pygments==2.19.0.20250305
+types-setuptools==78.1.0.20250329
+types-ujson==5.10.0.20250326
 typing-inspection==0.4.0
 typing_extensions==4.13.2
 uvicorn==0.34.1
